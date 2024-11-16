@@ -1,0 +1,16 @@
+<div th:fragment="content">
+    <div class="Title">
+        <p>Recent Updates</p>
+        <hr>
+    </div>
+    <div class="contents">
+        <div th:each="user : ${users}" class="object">
+            <div class="box"></div>
+            <div class="username-description">
+                <p th:text="${user.username}">Username</p>
+                <p th:text="${user.description}">Description</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
