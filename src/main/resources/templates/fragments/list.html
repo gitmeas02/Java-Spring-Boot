@@ -1,6 +1,7 @@
 
 <div class="container-list" th:fragment="content-product">
     <div class="list" th:each="product : ${products}">
+        <p th:text="${product.getId()}">id</p>
         <img alt="" th:src="@{${product.getImages()}}" style="width: 100px; height: 100px;">
         <p th:text="${product.getName()}">name</p>
     </div>
