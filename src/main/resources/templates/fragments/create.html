@@ -1,0 +1,9 @@
+<div class="container-create" th:fragment="content-product">
+    <form method="post" enctype="multipart/form-data" th:action="@{/save}" th:object="${product}">
+        <input type="file" name="image" accept="image/*" multiple required id="image">
+        <input type="text" th:field="*{name}" required id="name" name="name">
+        <button type="submit">Submit</button>
+    </form>
+    <a th:href="@{/lists}">List</a>
+    <a th:href="@{/home}">Home</a>
+</div>
