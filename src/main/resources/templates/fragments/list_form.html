@@ -1,0 +1,26 @@
+<div th:fragment="content">
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Price</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            <tr th:each="info : ${userList}">
+                <td th:text="${info.getId()}">1</td>
+                <td th:text="${info.getFirstName()}">First Name</td>
+                <td th:text="${info.getLastName()}">Last Name</td>
+                <td th:text="${info.getEmail()}">Email</td>
+                <td th:text="${info.getPrice()}">Price</td>
+                <td><a th:href="@{/edit/{id}(id=${info.getId()})}">Edit</a></td>
+                <td><a th:href="@{/delete/{id}(id=${info.getId()})}">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/create}">Create</a>
+  </div>
+  
