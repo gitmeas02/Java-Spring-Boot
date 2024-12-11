@@ -2,16 +2,19 @@
     <form th:action="@{/save}" method="post" th:object="${users_info}">
         <label for="firstName">First Name</label>
         <input type="text" name="firstName" id="firstName" th:field="*{firstName}">
+        <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="errors">Error firstName</div>
 
         <label for="lastName">Last Name</label>
         <input type="text" name="lastName" id="lastName" th:field="*{lastName}">
+        <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="errors">Error last name</div>
 
         <label for="email">Email</label>
         <input type="email" name="email" id="email" th:field="*{email}">
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email} " class="errors">Errors Email</div>
 
         <label for="price">Price</label>
         <input type="number" name="price" id="price" th:field="*{price}">
-
+        <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="errors">Errors Price</div>
         <button type="submit">Click Create</button>
     </form>
     <a th:href="@{/list_form}">List form</a>
